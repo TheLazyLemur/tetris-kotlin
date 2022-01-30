@@ -16,29 +16,12 @@ class Vec2<T>(private var x: T, private var y: T) {
         this.y = y
     }
 
-    // overloading plus function
     operator fun plus(p: Vec2<Float>): Vec2<Float> {
-        val newVec = Vec2(0f, 0f)
-
-        val x = this.getX() as Float + p.getX()
-        val y = this.getY() as Float + p.getY()
-
-        newVec.setX(x)
-        newVec.setY(y)
-
-        return newVec
+        return Vec2(this.getX() as Float + p.getX(), this.getY() as Float + p.getY())
     }
 
     operator fun minus(p: Vec2<Float>): Vec2<Float> {
-        val newVec = Vec2(0f, 0f)
-
-        val x = this.getX() as Float - p.getX()
-        val y = this.getY() as Float - p.getY()
-
-        newVec.setX(x)
-        newVec.setY(y)
-
-        return newVec
+        return Vec2(this.getX() as Float - p.getX(), this.getY() as Float - p.getY())
     }
 
     override fun toString(): String {
